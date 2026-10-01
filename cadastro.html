@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cadastro | Instituto Esperança</title>
+  <meta name="description" content="Cadastre-se como voluntário ou doador do Instituto Esperança e faça parte das nossas ações sociais.">
+  <link rel="icon" href="imagens/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="pular" href="#conteudo">Ir para o conteúdo</a>
+  <header class="topo">
+    <div class="container">
+      <a class="marca" href="index.html"><img src="imagens/logo.svg" alt="" width="40" height="40">Instituto Esperança</a>
+      <nav class="menu" aria-label="Navegação principal">
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="cadastro.html" aria-current="page">Cadastro</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="conteudo">
+    <section class="intro-pagina" aria-labelledby="titulo-cadastro">
+      <div class="container">
+        <h1 id="titulo-cadastro">Cadastro de voluntários e doadores</h1>
+        <p>Preencha os dados abaixo para participar. Todos os campos marcados com asterisco (*) são obrigatórios. Este formulário é apenas uma demonstração e nenhum dado é enviado.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        
+        <div class="alert alert-info"><span class="alert-icone" aria-hidden="true">i</span><p>Preencha todos os campos obrigatórios para continuar.</p></div>
+        <div id="alerta-erro" class="alert alert-error" role="alert" hidden><span class="alert-icone" aria-hidden="true">✖</span><div><strong>Atenção</strong><p>Não foi possível concluir o cadastro. Verifique os campos informados.</p></div></div>
+        <div id="mensagem-sucesso" class="alert alert-success" tabindex="-1" hidden><span class="alert-icone" aria-hidden="true">✔</span><div><strong>Cadastro realizado com sucesso!</strong><p>Obrigado por fazer parte dessa iniciativa.</p></div></div>
+
+        <form id="form-cadastro" action="#" method="post" novalidate>
+          <fieldset>
+            <legend>Dados pessoais</legend>
+            <div class="campos">
+              <div class="campo largo">
+                <label for="nome">Nome completo *</label>
+                <input type="text" id="nome" name="nome" required minlength="3" maxlength="100" autocomplete="name" placeholder="Maria da Silva" aria-describedby="nome-erro">
+                <p class="erro" id="nome-erro"></p>
+              </div>
+              <div class="campo">
+                <label for="email">E-mail *</label>
+                <input type="email" id="email" name="email" required maxlength="120" autocomplete="email" placeholder="maria@email.com" aria-describedby="email-erro">
+                <p class="erro" id="email-erro"></p>
+              </div>
+              <div class="campo">
+                <label for="nascimento">Data de nascimento *</label>
+                <input type="date" id="nascimento" name="nascimento" required min="1900-01-01" autocomplete="bday" aria-describedby="nascimento-erro">
+                <p class="erro" id="nascimento-erro"></p>
+              </div>
+              <div class="campo">
+                <label for="cpf">CPF *</label>
+                <input type="text" id="cpf" name="cpf" required inputmode="numeric" maxlength="14" pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}" data-erro="Use o formato 000.000.000-00." placeholder="000.000.000-00" aria-describedby="cpf-erro">
+                <p class="erro" id="cpf-erro"></p>
+              </div>
+              <div class="campo">
+                <label for="telefone">Telefone *</label>
+                <input type="tel" id="telefone" name="telefone" required maxlength="15" pattern="\([0-9]{2}\) [0-9]{4,5}-[0-9]{4}" data-erro="Use o formato (00) 00000-0000." autocomplete="tel" placeholder="(11) 91234-5678" aria-describedby="telefone-erro">
+                <p class="erro" id="telefone-erro"></p>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Endereço</legend>
+            <div class="campos">
+              <div class="campo">
+                <label for="cep">CEP *</label>
+                <input type="text" id="cep" name="cep" required inputmode="numeric" maxlength="9" pattern="[0-9]{5}-[0-9]{3}" data-erro="Use o formato 00000-000." autocomplete="postal-code" placeholder="00000-000" aria-describedby="cep-erro">
+                <p class="erro" id="cep-erro"></p>
+              </div>
+              <div class="campo">
+                <label for="endereco">Endereço *</label>
+                <input type="text" id="endereco" name="endereco" required minlength="3" maxlength="120" autocomplete="address-line1" placeholder="Rua, avenida..." aria-describedby="endereco-erro">
+                <p class="erro" id="endereco-erro"></p>
+              </div>
+              <div class="campo">
+                <label for="numero">Número *</label>
+                <input type="number" id="numero" name="numero" required min="1" max="99999" placeholder="123" aria-describedby="numero-erro">
+                <p class="erro" id="numero-erro"></p>
+              </div>
+              <div class="campo">
+                <label for="complemento">Complemento</label>
+                <input type="text" id="complemento" name="complemento" maxlength="60" placeholder="Apto, bloco..." aria-describedby="complemento-erro">
+                <p class="erro" id="complemento-erro"></p>
+              </div>
+              <div class="campo">
+                <label for="cidade">Cidade *</label>
+                <input type="text" id="cidade" name="cidade" required minlength="2" maxlength="80" autocomplete="address-level2" placeholder="São Paulo" aria-describedby="cidade-erro">
+                <p class="erro" id="cidade-erro"></p>
+              </div>
+              <div class="campo">
+                <label for="estado">Estado *</label>
+                <select id="estado" name="estado" required autocomplete="address-level1" aria-describedby="estado-erro">
+                  <option value="">Selecione</option>
+                  <option value="AC">Acre</option><option value="AL">Alagoas</option><option value="AP">Amapá</option>
+                  <option value="AM">Amazonas</option><option value="BA">Bahia</option><option value="CE">Ceará</option>
+                  <option value="DF">Distrito Federal</option><option value="ES">Espírito Santo</option><option value="GO">Goiás</option>
+                  <option value="MA">Maranhão</option><option value="MT">Mato Grosso</option><option value="MS">Mato Grosso do Sul</option>
+                  <option value="MG">Minas Gerais</option><option value="PA">Pará</option><option value="PB">Paraíba</option>
+                  <option value="PR">Paraná</option><option value="PE">Pernambuco</option><option value="PI">Piauí</option>
+                  <option value="RJ">Rio de Janeiro</option><option value="RN">Rio Grande do Norte</option><option value="RS">Rio Grande do Sul</option>
+                  <option value="RO">Rondônia</option><option value="RR">Roraima</option><option value="SC">Santa Catarina</option>
+                  <option value="SP">São Paulo</option><option value="SE">Sergipe</option><option value="TO">Tocantins</option>
+                </select>
+                <p class="erro" id="estado-erro"></p>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Interesse</legend>
+            <div class="campos">
+              <div class="campo">
+                <label for="participacao">Como deseja participar? *</label>
+                <select id="participacao" name="participacao" required aria-describedby="participacao-erro">
+                  <option value="">Selecione</option>
+                  <option value="voluntario">Quero ser voluntário</option>
+                  <option value="doador">Quero realizar doações</option>
+                  <option value="ambos">Quero ser voluntário e doador</option>
+                  <option value="informacoes">Quero receber informações</option>
+                </select>
+                <p class="erro" id="participacao-erro"></p>
+              </div>
+              <div class="campo">
+                <span id="rotulo-areas"><strong>Áreas de interesse</strong></span>
+                <div class="opcoes" role="group" aria-labelledby="rotulo-areas">
+                  <label for="area-alimentacao"><input type="checkbox" id="area-alimentacao" name="areas" value="alimentacao">Alimentação</label>
+                  <label for="area-educacao"><input type="checkbox" id="area-educacao" name="areas" value="educacao">Educação</label>
+                  <label for="area-comunidade"><input type="checkbox" id="area-comunidade" name="areas" value="comunidade">Ações comunitárias</label>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Mensagem</legend>
+            <div class="campo">
+              <label for="mensagem">Observações ou interesses</label>
+              <textarea id="mensagem" name="mensagem" maxlength="500" placeholder="Conte como gostaria de ajudar ou deixe sua dúvida."></textarea>
+              <span class="dica">Máximo de 500 caracteres.</span>
+            </div>
+          </fieldset>
+
+          <button type="submit" class="btn">Enviar cadastro</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="container">
+      <p><strong>Instituto Esperança</strong><br>&copy; 2026 Instituto Esperança. Todos os direitos reservados. Projeto acadêmico fictício.</p>
+      <nav aria-label="Navegação do rodapé">
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="cadastro.html">Cadastro</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+  <script src="js/script.js"></script>
+</body>
+</html>
